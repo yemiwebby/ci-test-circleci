@@ -20,7 +20,7 @@ class PostTest extends FeatureTestCase
 
     public function testIndex()
     {
-        $result = $this->get('post');
+        $result = $this->get('posts');
         $result->assertStatus(ResponseInterface::HTTP_OK);
     }
 
