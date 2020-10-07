@@ -1,6 +1,7 @@
 <?php
 
 use CodeIgniter\Model;
+use App\Exception\ItemNotFoundException;
 
 class PostModel extends Model
 {
@@ -26,7 +27,7 @@ class PostModel extends Model
             ->where(['id' => $id])
             ->first();
 
-        if (!$post) throw new Exception('Could not find post for specified ID');
+        if (!$post) throw new ItemNotFoundException('Could not find post for specified ID');
 
         return $post;
     }
